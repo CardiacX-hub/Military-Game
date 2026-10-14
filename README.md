@@ -1,4 +1,4 @@
-# Crystal Front — Tactical Ops 2.1
+# Crystal Front — Tactical Ops 2.2
 
 A phone-friendly isometric browser RTS with procedural voxel-style graphics. Play at https://cardiacx-hub.github.io/Military-Game/.
 
@@ -16,7 +16,7 @@ Opponents mine actual mineral fields, spend their own funds, build bases, train 
 
 - Tap/click units or buildings to select. Buildings replace the current unit selection and open their production list. Shift-click adds units.
 - Right-click to move or attack. On phones, select Move / attack and tap a destination. Orders use formations; ground units path around buildings and infantry avoids trees. Ground vehicles crush trees.
-- Select area, then drag a rectangle over your units. Attack-move orders fight visible enemies encountered along the route.
+- On desktop, hold the left mouse button and drag to select units; selection updates as the rectangle grows. A short click still selects a single unit or building. On phones, use Select area and drag. Attack-move orders fight visible enemies encountered along the route.
 - Drag to pan on phones; WASD/arrows pan on desktop. Pinch, scroll or use +/− to zoom. Tap the minimap to jump the camera.
 - Select a production building to queue its units. Command centers produce harvesters. Set rally point directs newly produced units to a location.
 - Select a completed missile silo, choose Launch rocket, then tap/click a target. The targeting circle shows its ground blast radius. Each strike costs 150 minerals, travels for 4.5 seconds and has a 25-second reload. The blast damages friendly and enemy ground forces and destroys trees, but does not hit aircraft.
@@ -47,3 +47,6 @@ Choose Easy, Normal, Hard or Brutal independently of the opponent count. Difficu
 | Brutal | 1,900 | 1.45× | 25 seconds | 18 seconds |
 
 Funds pay for the initial harvesters as well as expansion. Attacks require a trained army, so these timings are decision opportunities rather than guaranteed attack arrivals.
+
+## Independent queues and unit facing
+Every player production building now runs its own FIFO queue concurrently with other buildings, including two buildings of the same type. Select a building to see only its queue; rally points remain specific to the producer. Existing queued orders keep their producer when a save is resumed. Ground and air models smoothly rotate toward actual movement, and headings are saved. Tracked vehicles have segmented hulls, circular turret components, fine track links and grills; aircraft have tapered fuselages, segmented wings and finer panels. Large aircraft and scout models have reduced visual scale to avoid oversized blocky silhouettes.
