@@ -29,3 +29,6 @@ Start only with command center, power plant, refinery and two harvesters. Barrac
 
 ## SILO-OPS 1.5
 Harvesters are rendered at 68% of their previous size. Select a completed barracks, factory or airfield, then open Production to see only units supported by that building. Queued units remain bound to that facility; its destruction refunds queued costs. New buildings take 9–24 seconds to construct with scaffolding, sparks and progress bars; power, harvesting facilities, production and defenses activate only on completion. Build a missile silo, select it and press Launch rocket, then tap/click a ground target. Each strike costs 150 minerals, travels for 4.5 seconds and reloads for 25 seconds. The blast deals up to 520 damage over a 3.5-tile radius to both friendly and enemy ground units/buildings, destroys trees and does not hit aircraft.
+
+## COMMAND-OPS 1.6
+The main menu offers five player faction colors and 0–3 opposing factions (zero is sandbox). Each opponent owns a command center and spawns attacks from its own position; destroy all opposing command centers to win. Menu pauses gameplay while confirming whether to abandon the match; Keep playing restores the previous pause state. Vehicle factories and airfields require a completed, surviving friendly barracks before construction can be placed.
