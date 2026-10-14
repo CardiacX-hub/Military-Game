@@ -1,4 +1,4 @@
-# Crystal Front — Tactical Ops 2.0
+# Crystal Front — Tactical Ops 2.1
 
 A phone-friendly isometric browser RTS with procedural voxel-style graphics. Play at https://cardiacx-hub.github.io/Military-Game/.
 
@@ -35,3 +35,15 @@ Auto-save runs every 15 seconds and on page hiding when browser storage is avail
 ## Validation and limits
 
 The simulation suite covers pathfinding, formation orders, fog, targeting/counters, enemy mining/production, construction, rally points, rocket damage, save/resume and storage failure. Desktop Chromium and a 390×844 touch browser were exercised, including native touch area selection, attack-move, save across reload and resume, with no script errors. Graphics are voxel-style Canvas renderings rather than exported 3D models. Browser emulation does not replace testing on physical phones.
+
+## Difficulty
+Choose Easy, Normal, Hard or Brutal independently of the opponent count. Difficulty changes enemy starting funds, gathering speed, construction speed, training speed and attack scheduling. Player unit stats, costs and production speed stay consistent. Sandbox has no enemies regardless of difficulty. Saves retain their difficulty; saves from version 2.0 default to Normal.
+
+| Mode | Enemy starting funds | Production speed | First attack decision | Later attack interval |
+| --- | ---: | ---: | ---: | ---: |
+| Easy | 900 | 0.75× | 90 seconds | 60 seconds |
+| Normal | 1,200 | 1× | 50 seconds | 35 seconds |
+| Hard | 1,500 | 1.2× | 35 seconds | 25 seconds |
+| Brutal | 1,900 | 1.45× | 25 seconds | 18 seconds |
+
+Funds pay for the initial harvesters as well as expansion. Attacks require a trained army, so these timings are decision opportunities rather than guaranteed attack arrivals.
