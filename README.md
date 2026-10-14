@@ -23,3 +23,6 @@ Models include roughly ten times as many procedural detail blocks, including arm
 Start with two civilian harvesters and no military units. Produce your army from the command panel. Grass, mineral-field soil and paved base tiles use distinct palettes. Building colors identify their roles: blue command, gold power, teal refining, green barracks, purple factories and red defenses. Tanks and harvesters crush trees along their movement paths, leaving stumps and fallen wood; infantry does not crush trees.
 
 Production facilities must now be constructed: no barracks or vehicle factory is supplied at the start. Building details include framed reflective windows, antennas with blinking beacons, rotating radar dishes, service entrances, ladders and rooftop HVAC equipment.
+
+## AIR-OPS 1.4
+Start only with command center, power plant, refinery and two harvesters. Barracks, factory, airfield and defensive turrets must be constructed. Build an airfield to produce attack helicopters or strike planes; select and order aircraft just like ground units. Helicopters have animated rotors; aircraft fly above terrain and do not crush trees. First enemy wave arrives after 60 seconds to allow construction. Redesigned harvesters have articulated mining claws, multi-part tracks, glazed cabins and visible cargo. The visible AIR-OPS 1.4 label identifies this release.
