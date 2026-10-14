@@ -14,3 +14,5 @@ html,body{height:100%;overscroll-behavior:none}#game{touch-action:none}.touch-to
 #mobilePower{display:none}@media(max-width:600px){#mobilePower{display:block;position:absolute;top:12px;right:12px;background:#10232be6;border:1px solid #44636e;padding:7px 9px;color:#f1cf83;font-size:10px}.mission .live{font-size:6px}.mission h1{font-size:20px}}
 
 .menu-overlay{align-items:safe center}.menu-card{max-height:calc(100dvh - 28px);overflow-y:auto}#difficultyDescription{min-height:40px;line-height:1.5}#difficultyBadge{color:#e4c378}@media(max-width:600px){.menu-card label{margin-top:16px}.menu-card h1{margin:14px 0}.menu-card #difficultyDescription{font-size:10px;min-height:0;margin:10px 0}}
+
+#trenchAction,#cloakAction,#expandBase{display:block;width:100%;min-height:44px;margin-top:8px;color:#c9e2c6}#trenchAction[hidden],#cloakAction[hidden],#expandBase[hidden]{display:none}#researchStatus{font-size:11px;color:#e8c888;margin:8px 0}.upgrade-card{align-items:flex-start}.upgrade-card p{font-size:10px;margin-top:8px}.tabs button{font-size:10px}.tabs{gap:4px}@media(max-width:600px){#cards:has(.upgrade-card){grid-template-columns:1fr}.upgrade-card{min-height:85px}}

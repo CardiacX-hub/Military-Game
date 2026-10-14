@@ -1,52 +1,60 @@
-# Crystal Front — Tactical Ops 2.2
+# Crystal Front — Naval Ops 3.0
 
-A phone-friendly isometric browser RTS with procedural voxel-style graphics. Play at https://cardiacx-hub.github.io/Military-Game/.
+A phone-friendly isometric browser RTS with procedural voxel graphics. Play at https://cardiacx-hub.github.io/Military-Game/.
 
 ## Run and validate
 
-Requires Node.js 18 or newer. Run `npm start` and open port 3000. There are no runtime package dependencies. `npm run check` checks both scripts; `npm test` runs the simulation suite, including a three-minute economy/expansion scenario.
+Node.js 18 or newer is required. Run `npm start`, then open port 3000. No runtime package installation is needed. `npm run check` validates the scripts and `npm test` exercises gameplay, navigation, economy, research, combat, naval rules and persistence.
 
 ## Start an operation
 
-Choose one of six faction colors and 0–3 opponents. Zero opponents provides a sandbox. Begin with a command center, power plant, refinery and two civilian harvesters. Construct a barracks before building a vehicle factory or airfield. Buildings take time to construct and activate when complete; power shortages slow production and disable powered defenses.
+Choose six faction colors, 0–3 opponents, and seven difficulties: Easy, Normal, Hard, Brutal, Nightmare, Insane and Apocalypse. The top three use bigger economies, more harvesters, parallel production and aggressive raids. Insane adds 15% enemy unit health/damage; Apocalypse adds 30%. Difficulty and map choices are retained in saves. Zero opponents is sandbox.
 
-Opponents mine actual mineral fields, spend their own funds, build bases, train through facilities and assemble attacks. Destroy all opposing command centers to win.
+Select Frontier Plains for land combat, River Crossings for waterways with bridges, or Archipelago for separated land areas and naval/air combat. Ground units cannot enter water. Ships navigate water and pass under river bridges. Aircraft fly over both.
 
-## Controls
+Begin with a command center, power plant, refinery and two civilian harvesters. Barracks unlock Vehicle Shops; a completed Vehicle Shop unlocks airfields. Buildings take time to construct and activate when complete. Power shortages slow production and research and disable powered defenses. Destroy all opposing command centers to win.
 
-- Tap/click units or buildings to select. Buildings replace the current unit selection and open their production list. Shift-click adds units.
-- Right-click to move or attack. On phones, select Move / attack and tap a destination. Orders use formations; ground units path around buildings and infantry avoids trees. Ground vehicles crush trees.
-- On desktop, hold the left mouse button and drag to select units; selection updates as the rectangle grows. A short click still selects a single unit or building. On phones, use Select area and drag. Attack-move orders fight visible enemies encountered along the route.
-- Drag to pan on phones; WASD/arrows pan on desktop. Pinch, scroll or use +/− to zoom. Tap the minimap to jump the camera.
-- Select a production building to queue its units. Command centers produce harvesters. Set rally point directs newly produced units to a location.
-- Select a completed missile silo, choose Launch rocket, then tap/click a target. The targeting circle shows its ground blast radius. Each strike costs 150 minerals, travels for 4.5 seconds and has a 25-second reload. The blast damages friendly and enemy ground forces and destroys trees, but does not hit aircraft.
-- Sound controls mute synthesized combat audio. Save writes the current operation to this browser. Menu confirms before leaving and attempts a save.
+## Construction and expansion
 
-## Tactics and scouting
+Build ordinary structures within 18 world tiles of a completed friendly command center. Placement displays the command range. Buildings need dry land; a marina needs a land site directly beside water.
 
-The map is 96×96 tiles. Scouts and aircraft have larger sight ranges. Unexplored terrain is hidden; explored ground dims when outside current vision. Hidden enemies are neither drawn nor automatically targeted.
+Select a harvester and choose Build command center (900 minerals), then select a clear, dry site. The harvester travels there and starts 30-second construction on arrival. A completed expansion supplies a new construction area. Pending expansion orders can be cancelled for a refund; a blocked site is refunded. Expansions cannot be established across impassable water by a ground harvester.
 
-Rocket troops counter armor and aircraft; snipers counter infantry; tanks counter infantry; artillery gains damage against buildings and deals splash damage; bombers provide ground splash damage; interceptor fighters specialize in air combat. Unit details identify their role.
+## Units, queues and controls
 
-## Saves
+- Tap/click units or buildings to select. A building replaces the current army selection and opens its production list. Shift-click adds units.
+- Hold left-click and drag on desktop for live rectangle selection. On phones choose Select area, then drag.
+- Right-click to move or attack. On phones choose Move / attack and tap. Attack-move fights visible enemies along the route. Units use formations and obstacle-aware navigation, and turn toward movement.
+- Drag to pan on phones; WASD/arrows pan on desktop. Pinch, scroll or use +/− to zoom. Tap the minimap to move the camera.
+- Each production building runs its own queue independently, including multiple buildings of the same type. Set its rally point for newly produced units. Marina rally points must be on water.
+- Command centers produce harvesters. Barracks train rifle infantry, rocket troopers and snipers. Vehicle Shops produce harvesters, tanks, scouts and siege artillery. Airfields produce helicopters, strike planes, bombers and interceptor fighters.
+- Build a shoreline marina to produce patrol gunboats and missile destroyers. Destroyers can intercept aircraft as well as launch surface attacks.
 
-Auto-save runs every 15 seconds and on page hiding when browser storage is available. Resume saved operation appears in the main menu. Saves retain construction, queues, producer references, targets, enemy economy, exploration and camera position. Saves are local to this device, browser and site; private browsing or cleared/blocked storage may prevent persistence. Earlier releases do not have compatible saves.
+## Research and infantry abilities
 
-## Validation and limits
+Open Upgrades to research one upgrade at a time. The required completed facility is shown on each card. Research pauses if its facility is destroyed or unavailable; rebuilding resumes it.
 
-The simulation suite covers pathfinding, formation orders, fog, targeting/counters, enemy mining/production, construction, rally points, rocket damage, save/resume and storage failure. Desktop Chromium and a 390×844 touch browser were exercised, including native touch area selection, attack-move, save across reload and resume, with no script errors. Graphics are voxel-style Canvas renderings rather than exported 3D models. Browser emulation does not replace testing on physical phones.
+| Upgrade | Cost / time | Effect |
+| --- | --- | --- |
+| Infantry entrenchment | 300 / 15s; barracks | Foot soldiers dig/remove trenches in exactly 3 seconds. Trenches reduce damage by 65%; digging, entrenched and removing units cannot move. |
+| Sniper optical cloak | 450 / 20s; barracks | Toggle invisibility. Only opposing scout buggies within 9 tiles reveal cloaked snipers to their faction. |
+| Composite armor | 500 / 20s; Vehicle Shop | Units take 20% less damage. |
+| Advanced weapons | 550 / 22s; Vehicle Shop | Units deal 25% more weapon damage. |
 
-## Difficulty
-Choose Easy, Normal, Hard or Brutal independently of the opponent count. Difficulty changes enemy starting funds, gathering speed, construction speed, training speed and attack scheduling. Player unit stats, costs and production speed stay consistent. Sandbox has no enemies regardless of difficulty. Saves retain their difficulty; saves from version 2.0 default to Normal.
+Select upgraded foot soldiers to use Dig trench / Remove trench. Select upgraded snipers to toggle cloak. Your own cloaked snipers remain faintly visible to you.
 
-| Mode | Enemy starting funds | Production speed | First attack decision | Later attack interval |
-| --- | ---: | ---: | ---: | ---: |
-| Easy | 900 | 0.75× | 90 seconds | 60 seconds |
-| Normal | 1,200 | 1× | 50 seconds | 35 seconds |
-| Hard | 1,500 | 1.2× | 35 seconds | 25 seconds |
-| Brutal | 1,900 | 1.45× | 25 seconds | 18 seconds |
+## Combat and scouting
 
-Funds pay for the initial harvesters as well as expansion. Attacks require a trained army, so these timings are decision opportunities rather than guaranteed attack arrivals.
+Scouts and aircraft have larger sight ranges. Unexplored ground is hidden and explored ground dims outside current sight. Cloaked enemies remain hidden without scout detection, even inside normal vision.
 
-## Independent queues and unit facing
-Every player production building now runs its own FIFO queue concurrently with other buildings, including two buildings of the same type. Select a building to see only its queue; rally points remain specific to the producer. Existing queued orders keep their producer when a save is resumed. Ground and air models smoothly rotate toward actual movement, and headings are saved. Tracked vehicles have segmented hulls, circular turret components, fine track links and grills; aircraft have tapered fuselages, segmented wings and finer panels. Large aircraft and scout models have reduced visual scale to avoid oversized blocky silhouettes.
+Rocket troopers counter armor and aircraft; snipers counter infantry; tanks counter infantry; artillery gains damage against buildings; interceptors specialize in aircraft. Siege artillery fires delayed rockets with ground splash damage. Vehicles crush trees and leave debris.
+
+SAM Missile Batteries cost 500 minerals, require 30 power, and launch 320-damage guided anti-air missiles over a 15-tile range. They cannot fire at ground targets.
+
+Select a completed missile silo, press Launch rocket and select a ground target. Each strike costs 150 minerals, travels for 4.5 seconds and reloads for 25 seconds. The 4.5-tile blast deals up to 1,600 damage to units and 650 to structures, with distance falloff and armor/trench mitigation. It damages friendly ground forces and ships, destroys trees and does not hit aircraft. A targeting circle indicates the blast area.
+
+## Saves and validation
+
+Auto-save runs every 15 game seconds and on page hiding when storage is available. Save and Resume saved operation retain research, stance timers, cloak, map, difficulty, tactical missiles, harvester expansion orders, per-building queues, targets, enemy economy, exploration and camera. Saves stay on this device, browser and site. Blocked/cleared browser storage may prevent persistence. Older version-2 saves resume as Plains with no researched upgrades.
+
+The simulation suite covers old and new gameplay together, including funded opponents on both water maps. Desktop Chromium and a 390×844 touch browser were checked for map/difficulty selection, research, exact trench timing, cloak, shoreline placement, ship production and save/reload/resume without script errors. Physical phones have not been tested. Assets are procedural Canvas voxel renderings rather than exported 3D mesh files.
