@@ -21,3 +21,5 @@ Models include roughly ten times as many procedural detail blocks, including arm
 
 ## Terrain and starting forces
 Start with two civilian harvesters and no military units. Produce your army from the command panel. Grass, mineral-field soil and paved base tiles use distinct palettes. Building colors identify their roles: blue command, gold power, teal refining, green barracks, purple factories and red defenses. Tanks and harvesters crush trees along their movement paths, leaving stumps and fallen wood; infantry does not crush trees.
+
+Production facilities must now be constructed: no barracks or vehicle factory is supplied at the start. Building details include framed reflective windows, antennas with blinking beacons, rotating radar dishes, service entrances, ladders and rooftop HVAC equipment.

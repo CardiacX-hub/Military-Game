@@ -5,7 +5,7 @@ let trees=[],buildings,units,crystals,shots,particles,queue,selected,placement,m
 const rand=(a,b)=>a+Math.random()*(b-a),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),$=s=>document.querySelector(s);
 function addBuilding(type,x,y){let d=defs[type];let b={type,x,y,hp:d.hp,max:d.hp,team:0,building:true,cool:0};buildings.push(b);return b}
 function addUnit(type,x,y,team=0){let d=defs[type];let u={type,x,y,hp:d.hp,max:d.hp,team,cool:0,target:null,load:0};units.push(u);return u}
-function reset(){buildings=[];units=[];crystals=[];shots=[];particles=[];queue=[];selected=[];money=950;wave=0;nextWave=35;paused=false;over=false;placement=null;cam={x:0,y:0};time=0;addBuilding('command',14,16);addBuilding('plant',10,14);addBuilding('refinery',10,19);addBuilding('barracks',17,18);addBuilding('factory',16,12);addBuilding('turret',19,13);for(let i=0;i<17;i++)crystals.push({x:rand(3,7),y:rand(15,24),amount:900});addUnit('harvester',8,19);addUnit('harvester',9,21);seedTrees();$('#pause').textContent='Ⅱ Pause';renderCards();notify('Harvesters online. Produce an army to defend the frontier.');}
+function reset(){buildings=[];units=[];crystals=[];shots=[];particles=[];queue=[];selected=[];money=950;wave=0;nextWave=35;paused=false;over=false;placement=null;cam={x:0,y:0};time=0;addBuilding('command',14,16);addBuilding('plant',10,14);addBuilding('refinery',10,19);addBuilding('turret',19,13);for(let i=0;i<17;i++)crystals.push({x:rand(3,7),y:rand(15,24),amount:900});addUnit('harvester',8,19);addUnit('harvester',9,21);seedTrees();$('#pause').textContent='Ⅱ Pause';renderCards();notify('Build barracks or a vehicle factory, then produce your army.');}
 function power(){return buildings.reduce((a,b)=>{let p=defs[b.type].power;if(p>0)a.cap+=p;else a.used-=p;return a},{cap:40,used:0})}
 function notify(t){$('#notice').textContent=t;noticeTimer=5;}
 function renderCards(){let list=tab==='build'?['plant','refinery','barracks','factory','turret']:['infantry','tank','harvester'];$('#cards').innerHTML=list.map(t=>`<button class="card" data-type="${t}"><span class="icon">${defs[t].icon}</span><span><b>${defs[t].name}</b><small>◆ ${defs[t].cost} &nbsp; ${tab==='build'?(defs[t].power>0?'+'+defs[t].power+' power':Math.abs(defs[t].power)+' power'):defs[t].time+'s production'}</small></span></button>`).join('');document.querySelectorAll('.card').forEach(b=>b.onclick=()=>{let t=b.dataset.type;if(money<defs[t].cost)return notify('Insufficient minerals. Keep harvesting.');if(tab==='build'){placement=t;notify('Choose a clear grid tile to place '+defs[t].name+'.');}else{let required=t==='infantry'?'barracks':'factory';if(!buildings.some(b=>b.type===required))return notify('Build a '+defs[required].name+' first.');money-=defs[t].cost;queue.push({type:t,progress:0,required});notify(defs[t].name+' added to production.');}});}
@@ -24,7 +24,10 @@ function buildingModel(o,color,light,metal){const x=o.x,y=o.y,size=defs[o.type].
 box(x,y,size+.3,size+.3,3,'#45565a');
 function shell(a,b,w,d,h,z=3,c=color){box(x+a,y+b,w,d,h,c,z);}
 function vents(a,b,count,z){for(let i=0;i<count;i++)shell(a+i*.09,b,.04,.32,1,z,'#293d4b');}
-function windows(a,b,count,z){for(let i=0;i<count;i++)shell(a+i*.18,b,.105,.035,3,z,light);}
+function windows(a,b,count,z){for(let i=0;i<count;i++){shell(a+i*.18,b,.15,.055,4.4,z-.6,'#263743');shell(a+i*.18,b+.035,.105,.025,3,z,'#74bacf');shell(a+i*.18-.03,b+.055,.025,.018,2,z+.6,'#c7edec');shell(a+i*.18,b+.055,.15,.055,.6,z-.6,metal);}}
+function antenna(a,b,z,h=18){shell(a,b,.18,.18,2,z,metal);shell(a,b,.045,.045,h,z+2,'#d2d7d4');for(let j=0;j<3;j++)shell(a,b,.32-j*.065,.035,.6,z+h-j*3,metal);shell(a,b,.065,.065,1.5,z+h+2,Math.sin(time*3)>0?'#ff7564':'#754742');}
+function dish(a,b,z,r=.4){shell(a,b,.18,.18,8,z,metal);const angle=time*.4,c=Math.cos(angle),sn=Math.sin(angle);for(let i=-4;i<=4;i++)for(let j=-4;j<=4;j++){if(i*i+j*j>17)continue;const u=i*r/4,v=j*r/4;box(x+a+u*c,y+b+u*sn+v*.22,r/5,r/5,1.5,(i+j)%3?'#ccd2ca':'#899aa4',z+12+v*15+(u*u+v*v)*9);}shell(a,b,.035,.035,7,z+12,'#a7bcc5');shell(a,b,.08,.08,1,z+20,light);}
+
 if(o.type==='command'){
 shell(0,0,2.1,1.8,18);shell(-1,0,.65,1.5,13);shell(1,0,.65,1.5,13);shell(0,-.25,1.25,1.1,20,21);shell(0,-.25,1.35,1.2,3,41,metal);windows(-.48,.31,6,32);windows(-.8,.92,10,11);shell(0,1.18,.7,.55,4,3,metal);shell(.34,-.46,.09,.09,30,44,metal);shell(.34,-.46,.22,.22,3,73,light);for(let i=0;i<7;i++)shell(-.64+i*.15,-.58,.12,.12,2,45,metal);shell(-.8,-.5,.55,.55,5,17,metal);vents(-1.1,-.5,6,23);
 }else if(o.type==='plant'){
@@ -38,6 +41,13 @@ shell(0,-.32,2.5,1.9,26);shell(0,-.32,2.65,2,3,29,metal);shell(0,.74,1.65,.22,19
 }else if(o.type==='turret'){
 shell(0,0,.75,.75,7);for(let a of [-.32,.32])shell(a,0,.17,.85,6,10,metal);shell(0,0,.35,.35,13,10,metal);shell(0,0,.8,.65,8,23,color);for(let a of [-.18,.18])shell(.53,a,1,.12,4,26,metal);shell(-.22,-.23,.2,.2,5,31,light);for(let i=0;i<6;i++)shell(-.3+i*.1,.32,.05,.04,2,25,light);
 }
+// Framed glass, service entrances, rooftop communications and industrial fixtures.
+if(o.type==='command'){dish(-.82,-.55,25,.4);antenna(.52,.14,44,20);windows(-.46,.34,6,25);}
+else if(o.type==='plant'){windows(-.54,.82,7,5);shell(-.82,-.45,.2,.2,23,13,'#76838a');shell(-.82,-.45,.26,.26,2,36,metal);antenna(.79,-.61,13,13);}
+else if(o.type==='refinery'){windows(-.77,.47,5,11);antenna(-.74,-.55,23,19);for(let j=0;j<7;j++){shell(.94,-.45,.03,.15,.5,5+j*3,metal);shell(.94,-.45,.035,.035,21,4,metal);}shell(-.5,.49,.28,.055,7,3,'#243844');}
+else if(o.type==='barracks'){dish(.44,-.6,23,.3);antenna(-.65,-.64,23,20);shell(0,.94,.28,.04,6,3,'#253c35');shell(0,.96,.04,.03,6,3,metal);for(let i=0;i<5;i++)shell(-.74+i*.09,-.25,.05,.3,1,23,'#4d5d61');}
+else if(o.type==='factory'){windows(-.93,.66,4,23);windows(.5,.66,4,23);antenna(.85,-.87,32,22);dish(-.8,-.72,32,.3);for(let a of [-.45,.35]){shell(a,-.4,.42,.55,5,32,'#738189');vents(a-.15,-.4,4,38);}for(let j=0;j<8;j++)shell(0,.88,1.5,.03,.65,5+j*2,'#41535d');}
+else if(o.type==='turret'){dish(-.22,-.2,36,.22);antenna(-.29,.22,32,12);}
 }
 // Fine armor, seams, cooling fins and mechanical components: approximately 10x the original block count.
 function microDetails(o,blue,bright,metal){const x=o.x,y=o.y;
