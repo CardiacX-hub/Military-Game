@@ -1,4 +1,4 @@
-# Crystal Front — Naval Ops 3.0
+# Ironwake Command — 3.1
 
 A phone-friendly isometric browser RTS with procedural voxel graphics. Play at https://cardiacx-hub.github.io/Military-Game/.
 
@@ -8,9 +8,9 @@ Node.js 18 or newer is required. Run `npm start`, then open port 3000. No runtim
 
 ## Start an operation
 
-Choose six faction colors, 0–3 opponents, and seven difficulties: Easy, Normal, Hard, Brutal, Nightmare, Insane and Apocalypse. The top three use bigger economies, more harvesters, parallel production and aggressive raids. Insane adds 15% enemy unit health/damage; Apocalypse adds 30%. Difficulty and map choices are retained in saves. Zero opponents is sandbox.
+Choose from six faction colors, 0–3 opponents, and seven difficulties: Easy, Normal, Hard, Brutal, Nightmare, Insane and Apocalypse. The top three use bigger economies, more harvesters, parallel production and aggressive raids. Insane adds 15% enemy unit health/damage; Apocalypse adds 30%. Difficulty and map choices are retained in saves. Zero opponents is sandbox.
 
-Select Frontier Plains for land combat, River Crossings for waterways with bridges, or Archipelago for separated land areas and naval/air combat. Ground units cannot enter water. Ships navigate water and pass under river bridges. Aircraft fly over both.
+Select Frontier Plains for land combat, Naval River for waterways with bridges, or Archipelago for separated land areas and naval/air combat. Ground units cannot enter water. Ships navigate water and pass under river bridges. Aircraft fly over both.
 
 Begin with a command center, power plant, refinery and two civilian harvesters. Barracks unlock Vehicle Shops; a completed Vehicle Shop unlocks airfields. Buildings take time to construct and activate when complete. Power shortages slow production and research and disable powered defenses. Destroy all opposing command centers to win.
 
@@ -58,3 +58,10 @@ Select a completed missile silo, press Launch rocket and select a ground target.
 Auto-save runs every 15 game seconds and on page hiding when storage is available. Save and Resume saved operation retain research, stance timers, cloak, map, difficulty, tactical missiles, harvester expansion orders, per-building queues, targets, enemy economy, exploration and camera. Saves stay on this device, browser and site. Blocked/cleared browser storage may prevent persistence. Older version-2 saves resume as Plains with no researched upgrades.
 
 The simulation suite covers old and new gameplay together, including funded opponents on both water maps. Desktop Chromium and a 390×844 touch browser were checked for map/difficulty selection, research, exact trench timing, cloak, shoreline placement, ship production and save/reload/resume without script errors. Physical phones have not been tested. Assets are procedural Canvas voxel renderings rather than exported 3D mesh files.
+
+## Ironwake 3.1 visual and naval update
+The game is now named Ironwake Command; the repository and play URL remain the same, and existing saves remain available. Rifle infantry, rocket troopers and snipers have articulated running strides, body motion and footstep dust. Trenched units stay still. Each combat type has its own weapon signature, including rifle bursts, scoped sniper trails, machine-gun streaks, heavy tank shells, rotary-cannon fire, strike missiles, falling bombs, blue interceptor bolts, naval autocannon fire and distinct siege/SAM/vertical-launch rockets. Unit equipment and silhouettes distinguish rifles, bazookas, sniper camouflage, wheeled scouts, rocket artillery and aircraft roles.
+
+The missile destroyer is a much larger warship with a segmented hull and deck, missile cells, guns, bridge windows, railings, funnels, radar mast and stern helipad. Destroyers have additional water clearance and separation spacing. Naval units leave wakes while moving.
+
+New Naval River matches have approximately 10-tile-wide channels (formerly 6); new Archipelago channels are approximately 16 tiles wide (formerly 12). All opposing bases start across the first river from the player's starting bank. Existing saved matches retain their original channel widths and positions; start a new operation to use the new naval layout.
