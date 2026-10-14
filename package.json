@@ -1,1 +1,10 @@
-{"name":"crystal-front","version":"1.0.0","private":true,"scripts":{"start":"node server.js","check":"node --check game.js"}}
+{
+  "name": "crystal-front",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check systems.js && node --check game.js",
+    "test": "node --test tests/game.test.cjs"
+  }
+}

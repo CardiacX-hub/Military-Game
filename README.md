@@ -1,37 +1,37 @@
-# Crystal Front
-A playable isometric RTS with procedurally drawn voxel-style military assets. No dependencies or asset downloads are required.
+# Crystal Front — Tactical Ops 2.0
 
-## Run
-Requires Node.js 18 or newer. From this directory run `npm start`, then open port 3000 in your browser. Use `PORT` to select another port.
+A phone-friendly isometric browser RTS with procedural voxel-style graphics. Play at https://cardiacx-hub.github.io/Military-Game/.
 
-## Play
-Click friendly units to select them; Shift-click adds units. Right-click to move or attack enemies. The command sidebar lets you place buildings or queue infantry, tanks and harvesters. Harvesters automatically gather and deliver crystals to refineries. Maintain enough power to keep production and defenses operating. Enemy waves grow over time; defend your command center.
+## Run and validate
 
-WASD or arrow keys pan, mouse wheel zooms, Space pauses, and Escape cancels placement. Select combat units selects your entire army. New operation resets the match.
+Requires Node.js 18 or newer. Run `npm start` and open port 3000. There are no runtime package dependencies. `npm run check` checks both scripts; `npm test` runs the simulation suite, including a three-minute economy/expansion scenario.
 
-## Validation
-`npm run check` validates JavaScript syntax. HTTP startup and isolated simulation checks passed for mining, production, power shortages, enemy waves and combat. Browser visual validation was unavailable because the cloud network policy blocked the Playwright browser download.
+## Start an operation
 
-The assets are procedural voxel-style Canvas renderings rather than exported 3D mesh files.
+Choose one of six faction colors and 0–3 opponents. Zero opponents provides a sandbox. Begin with a command center, power plant, refinery and two civilian harvesters. Construct a barracks before building a vehicle factory or airfield. Buildings take time to construct and activate when complete; power shortages slow production and disable powered defenses.
 
-## Phones and tablets
-Tap units to select. Tap Move / attack, then a destination or enemy to order selected units. Select army selects all combat units. Drag the battlefield to pan; pinch or use +/− to zoom. Construction uses a tap on clear ground; Cancel exits placement. The command panel sits below the battlefield on portrait phones.
+Opponents mine actual mineral fields, spend their own funds, build bases, train through facilities and assemble attacks. Destroy all opposing command centers to win.
 
-Models include roughly ten times as many procedural detail blocks, including armor tiles, radiator fins, track links and infantry equipment. These remain Canvas voxel-style renderings.
+## Controls
 
-## Terrain and starting forces
-Start with two civilian harvesters and no military units. Produce your army from the command panel. Grass, mineral-field soil and paved base tiles use distinct palettes. Building colors identify their roles: blue command, gold power, teal refining, green barracks, purple factories and red defenses. Tanks and harvesters crush trees along their movement paths, leaving stumps and fallen wood; infantry does not crush trees.
+- Tap/click units or buildings to select. Buildings replace the current unit selection and open their production list. Shift-click adds units.
+- Right-click to move or attack. On phones, select Move / attack and tap a destination. Orders use formations; ground units path around buildings and infantry avoids trees. Ground vehicles crush trees.
+- Select area, then drag a rectangle over your units. Attack-move orders fight visible enemies encountered along the route.
+- Drag to pan on phones; WASD/arrows pan on desktop. Pinch, scroll or use +/− to zoom. Tap the minimap to jump the camera.
+- Select a production building to queue its units. Command centers produce harvesters. Set rally point directs newly produced units to a location.
+- Select a completed missile silo, choose Launch rocket, then tap/click a target. The targeting circle shows its ground blast radius. Each strike costs 150 minerals, travels for 4.5 seconds and has a 25-second reload. The blast damages friendly and enemy ground forces and destroys trees, but does not hit aircraft.
+- Sound controls mute synthesized combat audio. Save writes the current operation to this browser. Menu confirms before leaving and attempts a save.
 
-Production facilities must now be constructed: no barracks or vehicle factory is supplied at the start. Building details include framed reflective windows, antennas with blinking beacons, rotating radar dishes, service entrances, ladders and rooftop HVAC equipment.
+## Tactics and scouting
 
-## AIR-OPS 1.4
-Start only with command center, power plant, refinery and two harvesters. Barracks, factory, airfield and defensive turrets must be constructed. Build an airfield to produce attack helicopters or strike planes; select and order aircraft just like ground units. Helicopters have animated rotors; aircraft fly above terrain and do not crush trees. First enemy wave arrives after 60 seconds to allow construction. Redesigned harvesters have articulated mining claws, multi-part tracks, glazed cabins and visible cargo. The visible AIR-OPS 1.4 label identifies this release.
+The map is 96×96 tiles. Scouts and aircraft have larger sight ranges. Unexplored terrain is hidden; explored ground dims when outside current vision. Hidden enemies are neither drawn nor automatically targeted.
 
-## SILO-OPS 1.5
-Harvesters are rendered at 68% of their previous size. Select a completed barracks, factory or airfield, then open Production to see only units supported by that building. Queued units remain bound to that facility; its destruction refunds queued costs. New buildings take 9–24 seconds to construct with scaffolding, sparks and progress bars; power, harvesting facilities, production and defenses activate only on completion. Build a missile silo, select it and press Launch rocket, then tap/click a ground target. Each strike costs 150 minerals, travels for 4.5 seconds and reloads for 25 seconds. The blast deals up to 520 damage over a 3.5-tile radius to both friendly and enemy ground units/buildings, destroys trees and does not hit aircraft.
+Rocket troops counter armor and aircraft; snipers counter infantry; tanks counter infantry; artillery gains damage against buildings and deals splash damage; bombers provide ground splash damage; interceptor fighters specialize in air combat. Unit details identify their role.
 
-## COMMAND-OPS 1.6
-The main menu offers five player faction colors and 0–3 opposing factions (zero is sandbox). Each opponent owns a command center and spawns attacks from its own position; destroy all opposing command centers to win. Menu pauses gameplay while confirming whether to abandon the match; Keep playing restores the previous pause state. Vehicle factories and airfields require a completed, surviving friendly barracks before construction can be placed.
+## Saves
 
-## FRONTIER-OPS 1.7
-The battlefield is 96×96 tiles, with additional mineral fields and opposing bases across the larger terrain. Tap the minimap to jump the camera. Choose dark red in the main-menu faction palette. Harvesters can be produced at the command center as well as the vehicle factory. Barracks add rocket troopers and snipers; factories add fast scout buggies and long-range siege artillery; airfields add heavy bombers. Select a completed production building, press Set rally point and tap/click a destination (desktop: right-click a destination with the building selected). Newly produced units move there, and harvesters then resume mining. Buildings have selection priority over units at their footprint and visible body; selecting a building replaces the army selection, exits touch order mode and opens its production list. Detailed terrain/model rendering is limited to the visible area to keep larger maps practical.
+Auto-save runs every 15 seconds and on page hiding when browser storage is available. Resume saved operation appears in the main menu. Saves retain construction, queues, producer references, targets, enemy economy, exploration and camera position. Saves are local to this device, browser and site; private browsing or cleared/blocked storage may prevent persistence. Earlier releases do not have compatible saves.
+
+## Validation and limits
+
+The simulation suite covers pathfinding, formation orders, fog, targeting/counters, enemy mining/production, construction, rally points, rocket damage, save/resume and storage failure. Desktop Chromium and a 390×844 touch browser were exercised, including native touch area selection, attack-move, save across reload and resume, with no script errors. Graphics are voxel-style Canvas renderings rather than exported 3D models. Browser emulation does not replace testing on physical phones.
