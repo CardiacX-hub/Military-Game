@@ -18,3 +18,6 @@ The assets are procedural voxel-style Canvas renderings rather than exported 3D 
 Tap units to select. Tap Move / attack, then a destination or enemy to order selected units. Select army selects all combat units. Drag the battlefield to pan; pinch or use +/− to zoom. Construction uses a tap on clear ground; Cancel exits placement. The command panel sits below the battlefield on portrait phones.
 
 Models include roughly ten times as many procedural detail blocks, including armor tiles, radiator fins, track links and infantry equipment. These remain Canvas voxel-style renderings.
+
+## Terrain and starting forces
+Start with two civilian harvesters and no military units. Produce your army from the command panel. Grass, mineral-field soil and paved base tiles use distinct palettes. Building colors identify their roles: blue command, gold power, teal refining, green barracks, purple factories and red defenses. Tanks and harvesters crush trees along their movement paths, leaving stumps and fallen wood; infantry does not crush trees.
