@@ -65,3 +65,18 @@ The game is now named Ironwake Command; the repository and play URL remain the s
 The missile destroyer is a much larger warship with a segmented hull and deck, missile cells, guns, bridge windows, railings, funnels, radar mast and stern helipad. Destroyers have additional water clearance and separation spacing. Naval units leave wakes while moving.
 
 New Naval River matches have approximately 10-tile-wide channels (formerly 6); new Archipelago channels are approximately 16 tiles wide (formerly 12). All opposing bases start across the first river from the player's starting bank. Existing saved matches retain their original channel widths and positions; start a new operation to use the new naval layout.
+
+## Operations update · Ironwake 4.0
+
+- Enemies stage combined ground/air raids, take flanking routes, contest objectives, retreat and repair near their command centers, and use landing transports on water maps.
+- Orders show destination markers. Ground, naval and air formations choose legal terrain independently, match movement speeds within their group, and route around congestion at bridges.
+- Marinas produce Landing Transports: six cargo slots, with infantry using one slot, scouts two and other vehicles three. Bring troops within four tiles, select the transport and choose **Load nearby ground units**. Sail beside clear land and select **Unload**. Cargo survives saving and is lost with its ship.
+- Hold neutral sites with ground combat units for eight uncontested seconds. Mineral outposts earn five minerals per second; radar stations reveal a 22-tile radius; crossing watchposts reveal nearby approaches. Sites appear on the minimap after exploration. Enemies can capture them too.
+- Boot camp is a six-step playable tutorial covering harvesting, power, construction, production, orders, capturing and combat. It starts with harvesters and no military units or production buildings.
+- Skirmish options select starting resources, 96/112/128-tile maps, fog and 0.75×/1×/1.5× game speed. Extra starting minerals also go to opponents, on top of difficulty funding.
+- Control groups: Ctrl/Cmd + 1–3 assigns; 1–3 recalls. On phones use **Assign selected** then a group number, or hold the group button. Double-click/double-tap a unit to select nearby units of the same type. Touch action buttons have 44px targets.
+- Damaged vehicles and buildings smoke; hits show incoming direction; destroyed buildings leave rubble; strategic missile targets show impact countdowns. Engine, rotor, naval, weapon, water and order sounds are synthesized locally and respect the sound switch.
+- Victory and defeat show match time, resources gathered, damage, losses, kills and captures, with quick rematch and menu actions. Rematch preserves skirmish options.
+- Saves retain cargo, groups, objectives, settings, statistics and tutorial progress. Older saves keep their terrain and gain default options; start a new operation for the full new battlefield setup.
+
+Validation: `npm run check` and `npm test`. The simulation suite includes transport capacity and landing rules, AI landings/retreats, contested objectives, every map size, persistence and tutorial completion.

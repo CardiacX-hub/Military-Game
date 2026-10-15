@@ -1,10 +1,10 @@
 {
   "name": "ironwake-command",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "check": "node --check expansion.js && node --check visuals.js && node --check systems.js && node --check game.js",
+    "check": "node --check expansion.js && node --check visuals.js && node --check systems.js && node --check campaign.js && node --check game.js",
     "test": "node --test tests/game.test.cjs"
   }
 }
