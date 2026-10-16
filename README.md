@@ -80,3 +80,28 @@ New Naval River matches have approximately 10-tile-wide channels (formerly 6); n
 - Saves retain cargo, groups, objectives, settings, statistics and tutorial progress. Older saves keep their terrain and gain default options; start a new operation for the full new battlefield setup.
 
 Validation: `npm run check` and `npm test`. The simulation suite includes transport capacity and landing rules, AI landings/retreats, contested objectives, every map size, persistence and tutorial completion.
+
+## Level campaign and achievements · Ironwake 4.1
+
+Choose **Level campaign** in the main menu. Level 1 is available immediately; victory unlocks the next level. Completed levels can be replayed, defeat offers a retry, and victory offers **Next level**. Custom skirmishes and boot camp remain available.
+
+| Level | Operation | Newly introduced enemy units |
+| --- | --- | --- |
+| 1 | First Contact | Rifle squads |
+| 2 | Rocket Patrol | Rocket troopers |
+| 3 | Silent Hunters | Snipers |
+| 4 | Recon Sweep | Scout buggies |
+| 5 | Iron Division | Battle tanks |
+| 6 | Siege Line | Rocket artillery |
+| 7 | Rotor Storm | Attack helicopters |
+| 8 | Skybreaker | Strike planes, interceptors and bombers |
+| 9 | River Landing | Patrol gunboats and landing transports |
+| 10 | Ironwake | Missile destroyers |
+
+Enemy rosters are cumulative. AI construction and production cannot skip ahead to later units. Funding, production, mining and construction grow each level, while raids arrive sooner. Later levels add larger maps, multiple opponents and water battles. Player production remains unrestricted so you can choose your own strategy.
+
+Eight achievements track first victory, sniper-only victory, infantry-only victory, zero losses, a victory within ten minutes of game time, owning all capture objectives, completing level 5, and completing all ten levels. Campaign and skirmish victories qualify; sandbox and boot camp do not.
+
+**Silent Victory** requires deploying at least one sniper and no other combat unit during the entire match. Harvesters and upgrades are allowed. Building a turret, SAM battery or silo, or launching a strategic missile, disqualifies the attempt. Disqualification survives casualties, transport loading, saving and resuming. Check **Match challenges** in the command panel for live status. The achievement gallery appears in the main menu, with new unlocks on the results screen.
+
+Level progress and achievements are stored separately from the battlefield save in this browser. Current levels and challenge records also survive Save/Resume. Older battlefield saves still resume, but cannot earn achievements whose complete force/loss history cannot be verified. If browser storage is blocked, progress remains available for the current visit and the UI explains that it could not be saved.
