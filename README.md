@@ -168,3 +168,30 @@ Utility research gives **10% faster engineer repairs**, **20% faster harvester u
 Select a new unit to see its role and ability buttons. Cover, EMP and mine placement use a target click/tap; Cancel, Escape or desktop right-click cancels targeting. Mortars have deploy/pack controls; carriers have a drone-mode switch. Unlocked units only appear under their selected production building. Enemy-exclusive units and the easier campaign/Survival balance remain intact.
 
 Save/Resume includes battle research, cover lifetime, deployed mortars, EMP timers, mines and drone-carrier links. Permanent research is stored separately on this browser. If storage is blocked, purchases/refunds remain usable for the current visit. The test suite checks unique rewards, budgets/prerequisites/refunds, all unit roles, direction-sensitive shielding, targeted abilities, amphibious navigation, models and persistence.
+
+## Base progression, specialist research and timed cloak · Ironwake 5.1
+
+Command Centers start at **level 1** and can be upgraded **three times**, up to level 4. Select your Command Center and use its upgrade button. Upgrades cost minerals, take time, pause during EMP and slow during power shortages. Each level adds visible annexes, windows, communications equipment and a taller command tower, while adding 250 maximum integrity. The highest completed, surviving friendly Command Center determines production access.
+
+| Upgrade | Cost | Base time |
+| --- | --- | --- |
+| Level 1 → 2 | 500 minerals | 18 seconds |
+| Level 2 → 3 | 900 minerals | 25 seconds |
+| Level 3 → 4 | 1,400 minerals | 35 seconds |
+
+Production cards show their required Command Center level. Command Point unlocks are still required for research-tree units, in addition to base progression:
+
+| Base level | Units first available |
+| --- | --- |
+| 1 | Harvesters, rifle squads, scout buggies, patrol gunboats; unlocked engineers and medics |
+| 2 | Rocket troopers, tanks, helicopters, transports; unlocked mortar teams, shield carriers, minelayers and amphibious tanks |
+| 3 | Snipers, siege artillery, strike planes, interceptor fighters; unlocked EMP rovers |
+| 4 | Bombers, missile destroyers; unlocked drone carriers |
+
+Airfields require base level 2 as well as the completed Vehicle Shop; SAM batteries require level 3 and missile silos level 4. Advanced units cannot be queued before their level unlocks. If the last high-level Command Center is destroyed, advanced queued production pauses until the required level is restored. Enemy bases also pay for timed upgrades and respect unit-level requirements. The final enemy preserves resources for Leviathan production.
+
+Build separate **Infantry Research Labs** (300 minerals, 16 seconds, 25 power) and **Vehicle Research Labs** (450 minerals, 20 seconds, 35 power), both available at base level 2. Select the lab to see only its upgrades. Infantry labs offer entrenchment, body armor, advanced infantry weapons and level-3 sniper cloak; vehicle labs offer vehicle armor and level-3 weapons for vehicles, ships, aircraft and drones. One research project runs at a time. Existing permanent Command Research remains a separate between-battle system.
+
+**Sniper cloak lasts four seconds, then requires twenty seconds to recharge.** The action button shows active/recharge status, repeated presses cannot extend the effect, and scout buggies still detect cloaked snipers. Timers survive Save/Resume; older untimed cloaks expire after four seconds.
+
+Turrets and SAM batteries rotate their weapon assemblies toward live targets before firing, while foundations remain fixed. Their aim direction, Command Center levels and upgrade jobs also survive Save/Resume. New operations begin at base level 1; older saves without a base tier default to level 1 and may need upgrades to resume advanced production.
