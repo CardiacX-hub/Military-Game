@@ -145,3 +145,26 @@ Validation covers wave transitions, reward accounting, difficulty and roster esc
 Campaign enemies now have smaller budgets, slower production and income, lower health/damage bonuses and longer breaks between raids. The first campaign raid is scheduled after 79 seconds instead of about 53; the last level retains its special troops and Leviathan while reducing production from 5.35× to 3× and health from 2.1× to 1.31×. Every level still increases in difficulty.
 
 Normal Survival begins with five attackers instead of seven, reaches 21 instead of 29 on wave 10, and scales health and damage more gently. Recovery periods are now 20–45 seconds instead of 12–30. Difficulty choices, boss waves, rewards, stars, achievements and saved progress remain available. Start a new attempt to receive the reduced starting enemy budgets and armies.
+
+## Command research and tactical units · Ironwake 5.0
+
+Open **Command Research** in the main menu. Earn **40 Command Points (CP)** per first campaign-level victory, **10 CP** per newly earned best star, **15 CP** per achievement, and **20 CP** per new five-wave Survival milestone. Existing saved progress counts automatically. Rewards derive from unique completions and best records, so repeating the same result never pays again. No points are awarded for sandbox or tutorial wins.
+
+Research has three branches: **Infantry**, **Armor**, and **Air & Naval**. Purchase unit unlocks and modest utility perks. Every purchase can be refunded free; refunding a prerequisite also refunds its dependent research. **Refund all research** returns every point. Purchases apply to new operations. Resumed battles retain their saved research loadout, so refunds cannot alter a battle already in progress.
+
+| New unit | Production | Tactical role |
+| --- | --- | --- |
+| Combat Engineer | Barracks | Automatically repairs vehicles/buildings within 3 tiles at 12 HP/sec; builds cover within 4 tiles for 50 minerals. Cover builds in 2 seconds, lasts 45 seconds and reduces nearby infantry damage by 25%. |
+| Field Medic | Barracks | Unarmed; automatically heals nearby infantry at 7 HP/sec. |
+| Mortar Team | Barracks | Deploy for 2 seconds to fire long-range splash rounds. Cannot move until packed for 1 second. |
+| Shield Carrier | Vehicle Shop | Reduces frontal damage to allied units behind it by 40%; flank/rear attacks bypass it. |
+| EMP Rover | Vehicle Shop | Target within 8 tiles: disables enemy ground/naval vehicles and buildings in a 3.5-tile radius for 4 seconds; 30-second recharge. |
+| Minelayer | Vehicle Shop | Places anti-vehicle mines within 4 tiles for 25 minerals; 3-second recharge. Scout buggies detect hidden mines within 9 tiles and allow their team to route around them. Maximum 30 mines. |
+| Drone Carrier | Airfield | Launches up to 3 fragile drones, replacing losses every 12 seconds. Switch attack/recon mode; reconnaissance drones explore farther. Drones are lost when their carrier is destroyed. |
+| Amphibious Tank | Vehicle Shop | Crosses land and water directly, with 280 HP versus a standard tank's 380 HP. |
+
+Utility research gives **10% faster engineer repairs**, **20% faster harvester unloading** (0.5 to 0.4 seconds), **+2 scout/radar-station sight range**, and **10% shorter cover/EMP/mine cooldowns**. Existing weapon and armor research remains a separate in-battle system.
+
+Select a new unit to see its role and ability buttons. Cover, EMP and mine placement use a target click/tap; Cancel, Escape or desktop right-click cancels targeting. Mortars have deploy/pack controls; carriers have a drone-mode switch. Unlocked units only appear under their selected production building. Enemy-exclusive units and the easier campaign/Survival balance remain intact.
+
+Save/Resume includes battle research, cover lifetime, deployed mortars, EMP timers, mines and drone-carrier links. Permanent research is stored separately on this browser. If storage is blocked, purchases/refunds remain usable for the current visit. The test suite checks unique rewards, budgets/prerequisites/refunds, all unit roles, direction-sensitive shielding, targeted abilities, amphibious navigation, models and persistence.
