@@ -125,3 +125,17 @@ Enemy-only production unlocks cumulatively:
 These units have their own models and weapon effects, and never appear in player production. Only the primary enemy in the last level builds the Leviathan. It costs 6,500 minerals and takes 75 seconds of simulation time to build, unaffected by the enemy production-speed bonus (power shortages still slow it). One may exist or be queued at a time; the enemy can rebuild a destroyed fortress if its factory, command center and economy survive. A warning panel shows construction progress and then its health. It crosses land and water, fires heavy splash missiles, engages aircraft, and must be destroyed before victory if it has deployed. Striking its production base before deployment remains a valid strategy.
 
 Validation includes star boundaries and best-score persistence, legacy completion migration, all ten difficulty tiers, enemy-exclusive production, paid timed boss production, amphibious navigation, splash damage, boss victory rules, rendering and Save/Resume.
+
+## Endless survival · Ironwake 4.3
+
+Choose **Play survival** in the main menu. Survival uses the selected battlefield, difficulty, map size, starting resources, fog and game-speed settings. There are no enemy bases to destroy: defend your command centers against successive assault waves for as long as possible.
+
+- The first attack arrives after 60 seconds of preparation. During a preparation period, **Ready · send next wave** starts it early.
+- Clear every enemy and incoming reinforcement to finish a wave. You receive 200 + 50 × wave number in minerals, followed by 12–30 seconds to rebuild and prepare.
+- Waves grow in number, health and damage, introducing vehicles, aircraft and enemy-only special troops. Every tenth wave includes a Leviathan. Army size caps at 90 per wave, while health and damage keep rising indefinitely.
+- Ground entries are checked for reachable routes and kept away from your structures; water maps spawn ground forces on connected land. Air reinforcements can enter if ground entries become completely obstructed.
+- The HUD shows the wave, remaining enemies, preparation countdown and next assault preview. Defeat shows waves cleared, wave reached and your personal best. Retry preserves your selected settings.
+- Save/Resume retains the mode, countdown, active enemies and pending reinforcements. Your highest number of cleared waves is stored separately on this browser. Blocked storage keeps the record for the current visit only.
+- Survival has its own record and does not unlock campaign levels, stars or victory achievements. Campaign, skirmish and boot camp remain available.
+
+Validation covers wave transitions, reward accounting, difficulty and roster escalation, reachable spawns on every map, records, Save/Resume, defeat/retry and switching between modes.
