@@ -139,3 +139,9 @@ Choose **Play survival** in the main menu. Survival uses the selected battlefiel
 - Survival has its own record and does not unlock campaign levels, stars or victory achievements. Campaign, skirmish and boot camp remain available.
 
 Validation covers wave transitions, reward accounting, difficulty and roster escalation, reachable spawns on every map, records, Save/Resume, defeat/retry and switching between modes.
+
+## Difficulty rebalance · Ironwake 4.4
+
+Campaign enemies now have smaller budgets, slower production and income, lower health/damage bonuses and longer breaks between raids. The first campaign raid is scheduled after 79 seconds instead of about 53; the last level retains its special troops and Leviathan while reducing production from 5.35× to 3× and health from 2.1× to 1.31×. Every level still increases in difficulty.
+
+Normal Survival begins with five attackers instead of seven, reaches 21 instead of 29 on wave 10, and scales health and damage more gently. Recovery periods are now 20–45 seconds instead of 12–30. Difficulty choices, boss waves, rewards, stars, achievements and saved progress remain available. Start a new attempt to receive the reduced starting enemy budgets and armies.

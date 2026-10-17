@@ -1,6 +1,6 @@
 'use strict';
 const canvas=document.querySelector('#game'),ctx=canvas.getContext('2d'),mini=document.querySelector('#map'),mc=mini.getContext('2d');
-const GAME_VERSION='IRONWAKE 4.3';
+const GAME_VERSION='IRONWAKE 4.4';
 let MAP_SIZE=96;
 const difficulties={
  easy:{name:'Easy',budget:900,production:.75,construction:.8,mining:.85,firstAttack:90,attackInterval:60,buildInterval:6,trainInterval:5,squad:4,description:'Slower enemy growth, smaller starting budget and more time before attacks.'},
