@@ -105,3 +105,23 @@ Eight achievements track first victory, sniper-only victory, infantry-only victo
 **Silent Victory** requires deploying at least one sniper and no other combat unit during the entire match. Harvesters and upgrades are allowed. Building a turret, SAM battery or silo, or launching a strategic missile, disqualifies the attempt. Disqualification survives casualties, transport loading, saving and resuming. Check **Match challenges** in the command panel for live status. The achievement gallery appears in the main menu, with new unlocks on the results screen.
 
 Level progress and achievements are stored separately from the battlefield save in this browser. Current levels and challenge records also survive Save/Resume. Older battlefield saves still resume, but cannot earn achievements whose complete force/loss history cannot be verified. If browser storage is blocked, progress remains available for the current visit and the UI explains that it could not be saved.
+
+## Stars, escalation and enemy specials · Ironwake 4.2
+
+Campaign wins now earn up to three stars: one for victory, one for finishing within the level's target time (8 minutes on level 1, increasing by a minute per level), and one for losing no buildings and at most the stated number of units (3–8 depending on level). The menu shows targets before launch; results show each condition and the rating. Best ratings survive replays, Save/Resume and reloads. Existing completed levels retain their unlocks and get their baseline victory star; bonus stars require a new attempt. There are 30 stars total.
+
+Campaign difficulty has been rebuilt with a stronger, accelerating economy, faster construction and production, shorter raid intervals, and rising enemy health and damage. Opponents buy established refineries, power and barracks at launch, with later factories, airfields and marinas matching their unlocked roster. These facilities cost enemy minerals. Player starting forces and custom-skirmish difficulty remain unchanged.
+
+Enemy-only production unlocks cumulatively:
+
+| Level | Special troop | Role |
+| --- | --- | --- |
+| 2 | Arc Shock Trooper | Armored infantry with chain-damage arc fire |
+| 4 | Wraith Raider | Fast plasma assault buggy |
+| 6 | Siege Juggernaut | Heavy armored rocket artillery |
+| 8 | Revenant Gunship | Armored aircraft with splash fire |
+| 10 | Leviathan Hover Fortress | Huge amphibious missile platform |
+
+These units have their own models and weapon effects, and never appear in player production. Only the primary enemy in the last level builds the Leviathan. It costs 6,500 minerals and takes 75 seconds of simulation time to build, unaffected by the enemy production-speed bonus (power shortages still slow it). One may exist or be queued at a time; the enemy can rebuild a destroyed fortress if its factory, command center and economy survive. A warning panel shows construction progress and then its health. It crosses land and water, fires heavy splash missiles, engages aircraft, and must be destroyed before victory if it has deployed. Striking its production base before deployment remains a valid strategy.
+
+Validation includes star boundaries and best-score persistence, legacy completion migration, all ten difficulty tiers, enemy-exclusive production, paid timed boss production, amphibious navigation, splash damage, boss victory rules, rendering and Save/Resume.
